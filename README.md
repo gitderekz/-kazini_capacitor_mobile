@@ -32,6 +32,39 @@ cd android
 ./gradlew assembleRelease
 ```
 
+iOS / iPhone (macOS + Xcode)
+
+Notes: building and exporting an iOS app requires a Mac with Xcode and CocoaPods installed. Use Xcode for signing and distribution.
+
+1) Open the Xcode workspace
+
+```bash
+cd /home/kali/miradi/phoisec-web-mobile/mobile/kazini_capacitor_mobile
+npm run open:ios
+```
+
+2) (Optional CLI) Install CocoaPods and build for simulator or device
+
+```bash
+cd ios
+pod install
+# build for simulator
+xcodebuild -workspace App/App.xcworkspace -scheme App -configuration Debug -destination 'generic/platform=iOS Simulator' build
+```
+
+3) Archive and export (for TestFlight / Ad-Hoc / App Store)
+
+Open the workspace in Xcode and use Product → Archive, or run from the command line:
+
+```bash
+cd ios
+xcodebuild -workspace App/App.xcworkspace -scheme App -configuration Release -archivePath build/App.xcarchive archive
+xcodebuild -exportArchive -archivePath build/App.xcarchive -exportOptionsPlist exportOptions.plist -exportPath build
+```
+
+You can create an `exportOptions.plist` (example provided in the project) to choose `ad-hoc`, `enterprise`, or `app-store` export methods. Use Xcode Organizer to upload to App Store Connect or export an IPA for distribution.
+
+
 ## Important notes
 - The source of truth remains the Wateja web project in `../wateja`.
 - The Capacitor app loads the built static frontend, which keeps the exact app behavior consistent with the web version.
