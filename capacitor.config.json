@@ -1,0 +1,32 @@
+{
+  "appId": "com.phoisec.kazini",
+  "appName": "phoisec kazini",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true,
+    "allowNavigation": [
+      "https://kazini.phoisec.com",
+      "https://*.phoisec.com",
+      "http://localhost:5173",
+      "http://127.0.0.1:5173",
+      "http://10.0.2.2:5173",
+      "http://192.168.*.*",
+      "http://192.168.1.39",
+      "http://192.168.1.39:3000",
+      "http://192.168.1.39:5173",
+      "http://10.0.2.2:3000"
+    ]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1500,
+      "backgroundColor": "#0f172a",
+      "showSpinner": false,
+      "splashFullScreen": true,
+      "splashImmersive": true,
+      "androidScaleType": "CENTER_CROP"
+    }
+  }
+}

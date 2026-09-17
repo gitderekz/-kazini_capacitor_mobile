@@ -1,0 +1,28 @@
+{
+  "name": "kazini_capacitor_mobile",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build:web": "cd ../../kazini && npm run build && mkdir -p ../mobile/kazini_capacitor_mobile/www && rm -rf ../mobile/kazini_capacitor_mobile/www/* && cp -R dist/* ../mobile/kazini_capacitor_mobile/www/",
+    "sync": "npx cap sync",
+    "open:android": "npx cap open android",
+    "open:ios": "npx cap open ios",
+    "dev": "npx cap run android",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Capacitor wrapper for the Kazini web app",
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.1.1",
+    "@capacitor/browser": "^8.0.4",
+    "@capacitor/cli": "^7.6.9",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.3"
+  }
+}
